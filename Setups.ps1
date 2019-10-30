@@ -1,7 +1,7 @@
 function RunAsAdmin
 {
     # Usage:
-    # if (RunAsAdmin) { [do whatever] }
+    # if (!(RunAsAdmin)) { Exit }
 
     $adminaccess = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')
     if ($adminaccess) { return $true}
